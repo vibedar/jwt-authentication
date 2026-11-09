@@ -64,7 +64,7 @@ public class AuthController {
 	
 	@PostMapping("/message")
 	public String getMessage() {
-		return "welcome hottu";
+		return "welcome to the webpage";
 	}
 
 			
