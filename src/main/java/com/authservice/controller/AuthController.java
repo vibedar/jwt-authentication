@@ -62,7 +62,7 @@ public class AuthController {
 		 return new ResponseEntity<>(response, HttpStatusCode.valueOf(response.getStatus()));
 	 }
 	
-	@PostMapping("/message")
+	@GetMapping("/message")
 	public String getMessage() {
 		return "welcome hottu";
 	}
