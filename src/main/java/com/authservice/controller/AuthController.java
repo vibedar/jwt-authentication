@@ -72,9 +72,16 @@ public class AuthController {
 
 	@GetMapping("user-list")
 	public List<User> getAll(){
-		return userRepo.findAll();
-	}
-
-			
-
+		APIResponse<List<User>> res = new APIReponse<>();
+		List<User> users = userRepo.findAll();
+		if(users!=null){
+			res.setMsg("list of users");
+			res.setStatus(200);
+			res.setData(users);
+			return new ResponseEntity<>(res, HttpStatus.OK);
+		}
+		else {
+			return "users are not there";
+		}
+	}	
 }
