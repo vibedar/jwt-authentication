@@ -26,6 +26,9 @@ public class AuthController {
 	
 	@Autowired
 	private JwtService jwtService;
+
+	@Autowired
+	private UserRepository userRepo;
 	
 	@PostMapping("/register")
 	public ResponseEntity<APIResponse<String>> register(@RequestBody UserDto dto){
@@ -62,9 +65,14 @@ public class AuthController {
 		 return new ResponseEntity<>(response, HttpStatusCode.valueOf(response.getStatus()));
 	 }
 	
-	@PostMapping("/message")
+	@GetMapping("/message")
 	public String getMessage() {
-		return "welcome to the webpage";
+		return "welcome to the website";
+	}
+
+	@GetMapping("user-list")
+	public List<User> getAll(){
+		return userRepo.findAll();
 	}
 
 			
