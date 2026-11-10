@@ -67,7 +67,7 @@ public class AuthController {
 	
 	@GetMapping("/message")
 	public String getMessage() {
-		return "welcome to the website";
+		return "welcome to the webpage";
 	}
 
 	@GetMapping("user-list")
